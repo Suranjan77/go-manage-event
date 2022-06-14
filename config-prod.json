@@ -1,0 +1,11 @@
+{
+    "datasource": {
+        "host": "127.0.0.1",
+        "port": "3301",
+        "username": "",
+        "password": ""
+    },
+    "server": {
+        "port": "8080"
+    }
+}
