@@ -1,9 +1,10 @@
 {
     "datasource": {
         "host": "127.0.0.1",
-        "port": "3301",
-        "username": "",
-        "password": ""
+        "port": "3306",
+        "username": "root",
+        "password": "services",
+        "dbName": "go_event_management"
     },
     "server": {
         "port": "8080"
