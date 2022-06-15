@@ -1,7 +1,7 @@
 package utils
 
 import (
-	"fmt"
+	"log"
 	"os"
 
 	"github.com/spf13/viper"
@@ -10,15 +10,16 @@ import (
 var P Properties
 
 type Properties struct {
-	Server Server
+	Server     Server
 	DataSource DataSource
 }
 
 type DataSource struct {
-	Host string
-	Port string
+	Host     string
+	Port     string
 	UserName string
 	Password string
+	DbName   string
 }
 
 type Server struct {
@@ -51,5 +52,5 @@ func init() {
 		panic("Failed to load properties\n" + err.Error())
 	}
 
-	fmt.Println("Application properties loaded.")
+	log.Println("Application properties loaded.")
 }
