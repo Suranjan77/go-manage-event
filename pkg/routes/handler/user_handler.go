@@ -18,13 +18,14 @@ func (h *Handler) AddUser(c *gin.Context) {
 			},
 			TimeStamp: time.Now().UnixMilli(),
 		}
-		c.JSON(http.StatusBadRequest, &error)
+		c.AbortWithStatusJSON(http.StatusBadRequest, &error)
+		return
 	}
 
 	user := signUpRequest.ToUser()
 
 	if res := h.DB.Create(&user); res.Error != nil {
-		c.JSON(
+		c.AbortWithStatusJSON(
 			http.StatusNotFound,
 			models.ErrorResponse{
 				Error: []models.Error{
@@ -33,8 +34,8 @@ func (h *Handler) AddUser(c *gin.Context) {
 				TimeStamp: time.Now().UnixMilli(),
 			},
 		)
+		return
 	}
 
 	c.JSON(http.StatusCreated, models.UserResponseFromUser(user))
-
 }
