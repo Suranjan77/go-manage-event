@@ -8,6 +8,7 @@ import (
 
 	props "github.com/Suranjan77/go-manage-event/pkg/common/config"
 	"github.com/Suranjan77/go-manage-event/pkg/common/db"
+	"github.com/Suranjan77/go-manage-event/pkg/middlewares"
 	"github.com/Suranjan77/go-manage-event/pkg/routes"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
@@ -32,6 +33,8 @@ func setUpRouter() *gin.Engine {
 	router.Use(gin.Recovery())
 
 	router.Use(cors.Default())
+
+	router.Use(middlewares.JSONMiddleware())
 
 	router.GET("/ping", func(c *gin.Context) {
 		c.JSON(http.StatusOK, gin.H{"message": "pong", "currentTime": time.Now().Format("2006-01-02T15:04:05+07:00")})
