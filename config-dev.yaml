@@ -1,0 +1,8 @@
+serverPort: 8080
+dbHost: localhost
+dbPort: 3306
+dbName: go_event_management
+dbMaxPoolSize: 100
+dbMaxIdleConn: 25
+dbMaxConnLifeTimeDuration: 30m
+logLevel: debug
