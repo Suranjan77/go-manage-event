@@ -3,7 +3,7 @@ package models
 import (
 	"bytes"
 
-	"github.com/Suranjan77/go-manage-event/pkg/common/domain"
+	"github.com/Suranjan77/go-manage-event/pkg/domain"
 	"golang.org/x/crypto/bcrypt"
 )
 

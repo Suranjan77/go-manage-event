@@ -1,6 +1,6 @@
 package models
 
-import "github.com/Suranjan77/go-manage-event/pkg/common/domain"
+import "github.com/Suranjan77/go-manage-event/pkg/domain"
 
 type UserResponse struct {
 	FirstName string `json:"firstName"`
